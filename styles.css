@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+
+.calc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25em;
+    height: 25em;
+    background-color: bisque;
+}
+
+.calc-display {
+    background-color: olive;
+    width: 90%;
+    height: 2em;
+}
+
