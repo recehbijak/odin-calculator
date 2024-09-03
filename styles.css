@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -38,7 +41,7 @@ body {
 }
 
 .calc-display {
-    background-color: olive;
+    background-color: rgb(100, 100, 37);
     width: 90%;
     box-sizing: border-box;
     border-style: solid;
@@ -48,7 +51,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Silkscreen", Helvetica, sans-serif;
     font-size: 4em;
 }
 
@@ -65,16 +68,17 @@ body {
 }
 
 button {
-    font-size: 3em;
+    font-size: 3.5em;
+    font-weight: 600;
     width: 20%;
     height: 2em;
     padding: 0.2em;
     flex-grow: 1;
     border-radius: 5px 5px 15px 15px;
-    background-color: #0d1014;
+    background-image: linear-gradient(to right, #0d1014, #232931);
     color: white;
     border-style: solid;
-    border-color: #37404b #010102 #010102  #37404b;
+    border-color: #2d3641 #010102 #010102  #2d3641;
     border-width: 4px;
 }
 
@@ -91,8 +95,15 @@ button {
 }
 
 .operator-buttons {
-    background-color: orange;
+    background-image: linear-gradient(to right, orange, rgb(255, 193, 78));
     color: #0d1014;
     border-style: solid;
     border-color: #f8ba48 #d8811e #d8811e #f8ba48;
+}
+
+#clear-btn {
+    background-image: linear-gradient(to right, rgb(192, 30, 30), rgb(238, 76, 76));
+    color: white;
+    border-style: solid;
+    border-color: rgb(238, 76, 76) rgb(173, 33, 33) rgb(173, 33, 33) rgb(238, 76, 76);
 }
