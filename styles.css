@@ -3,6 +3,24 @@ body {
     flex-direction: column;
     justify-content: center;    
     align-items: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.top-text {
+    color: white;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    padding: 5px;
+}
+
+.left-text h2 {
+    margin: 0;
+}
+
+.left-text p {
+    margin: 0;
 }
 
 .calc-container {
@@ -10,14 +28,71 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 25em;
-    height: 25em;
-    background-color: bisque;
+    width: 40em;
+    background-color: #252c38;
+    border-radius: 10px 10px 100px 100px;
+    padding-bottom: 2em;
+    border-style: solid;
+    border-color:  #384253 #181d25 #181d25 #384253;
+    border-width: 8px;
 }
 
 .calc-display {
     background-color: olive;
     width: 90%;
-    height: 2em;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #181d25 #384253 #384253 #181d25;
+    border-width: 5px;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
 }
 
+.calc-display p {
+    margin: 0;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    width: 90%;
+}
+
+button {
+    font-size: 3em;
+    width: 20%;
+    height: 2em;
+    padding: 0.2em;
+    flex-grow: 1;
+    border-radius: 5px 5px 15px 15px;
+    background-color: #0d1014;
+    color: white;
+    border-style: solid;
+    border-color: #37404b #010102 #010102  #37404b;
+    border-width: 4px;
+}
+
+.num-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.operator-buttons {
+    background-color: orange;
+    color: #0d1014;
+    border-style: solid;
+    border-color: #f8ba48 #d8811e #d8811e #f8ba48;
+}
