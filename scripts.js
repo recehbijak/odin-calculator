@@ -1,7 +1,7 @@
 let digitFirst = '';
 let digitOperator = '';
 let digitSecond = ''; 
-let displayValue = digitFirst + digitOperator + digitSecond;;
+let displayValue = '';
 
 function operate() {
     const intDigitFirst = Number(digitFirst);
@@ -21,7 +21,6 @@ function operate() {
             return calcDivide(intDigitFirst, intDigitSecond);
             break; 
     }
-
 }
 
 function calcAdd(x, y) {
@@ -43,42 +42,54 @@ function calcDivide(x, y) {
 const buttonsNum = document.querySelectorAll(".number-buttons");
 const buttonsOperator = document.querySelectorAll(".operator-buttons");
 const display = document.querySelector(".calc-display");
-const placeholder = document.querySelector(".placeholder")
+const placeholder = document.querySelector(".placeholder");
+const calcButton = document.querySelector("#calc-btn");
+const clearButton = document.querySelector("#clear-btn")
 
 buttonsNum.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        if (digitFirst !== '' && digitOperator !== '') {
-            digitSecond += e.target.value;
-            console.log(digitSecond);
-            showDisplayValues();
-        } else {
+        if (digitOperator === '') {
             digitFirst += e.target.value;
-            console.log(digitFirst);
-            showDisplayValues();
+            insertDisplayValue(e)
+        } else {
+            digitSecond += e.target.value;
+            insertDisplayValue(e);
         }
     })
 })
 
 buttonsOperator.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        digitOperator = e.target.value;
-        console.log(digitOperator);
-        showDisplayValues();
+        if (digitOperator === '') {
+            digitOperator = e.target.value;
+            console.log(digitOperator);
+            insertDisplayValue(e);
+        }
     })
 })
 
-function showDisplayValues() {
+clearButton.addEventListener('click', (e) => {
+    placeholder.textContent = '';
+    displayValue = '';
+    digitFirst = '';
+    digitOperator = '';
+    digitSecond = '';
+})
+
+calcButton.addEventListener('click', (e) => {
+    let finalValue = operate();
+
+    console.log(finalValue);
+
+    digitFirst = finalValue;
+    displayValue = finalValue;
+    digitSecond = '';
+    digitOperator = '';
+
     placeholder.textContent = displayValue;
-}
+})
 
-function displayFirstDigits() {
-    placeholder.textContent = digitFirst;
-}
-
-function displayOperator() {
-    placeholder.append(`${digitOperator}`)
-}
-
-function displaySecondDigits() {
-    placeholder.append(`${digitSecond}`)
+function insertDisplayValue(event) {
+    displayValue += event.target.value
+    placeholder.textContent = displayValue;
 }
