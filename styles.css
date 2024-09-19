@@ -68,6 +68,7 @@ body {
 
 .calc-display p {
     margin: 0;
+    text-shadow: 5px 5px rgb(59, 59, 20, 50%);
 }
 
 .buttons-container {

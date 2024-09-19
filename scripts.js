@@ -49,11 +49,12 @@ const clearButton = document.querySelector("#clear-btn")
 buttonsNum.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if (digitOperator === '') {
+            placeholder.textContent = '';
             digitFirst += e.target.value;
-            insertDisplayValue(e)
+            placeholder.textContent = digitFirst;
         } else {
             digitSecond += e.target.value;
-            insertDisplayValue(e);
+            placeholder.textContent = digitSecond;
         }
     })
 })
@@ -63,7 +64,11 @@ buttonsOperator.forEach(btn => {
         if (digitOperator === '') {
             digitOperator = e.target.value;
             console.log(digitOperator);
-            insertDisplayValue(e);
+        } else {
+            digitFirst = roundTo(operate(), 6);
+            digitSecond = '';
+            digitOperator = e.target.value;
+            placeholder.textContent = digitFirst;
         }
     })
 })
@@ -81,15 +86,18 @@ calcButton.addEventListener('click', (e) => {
 
     console.log(finalValue);
 
-    digitFirst = finalValue;
-    displayValue = finalValue;
+    
+    displayValue = roundTo(finalValue, 6);
+    digitFirst = '';
     digitSecond = '';
     digitOperator = '';
+
 
     placeholder.textContent = displayValue;
 })
 
-function insertDisplayValue(event) {
-    displayValue += event.target.value
-    placeholder.textContent = displayValue;
+
+function roundTo(num, precision) {
+    const factor = Math.pow(10, precision);
+    return Math.round(num * factor) / factor;
 }
