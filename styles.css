@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@font-face {
+    font-family: "Digital Font";
+    src: url('e1234.italic.ttf')
+}
 
 
 body {
@@ -7,6 +12,23 @@ body {
     justify-content: center;    
     align-items: center;
     font-family: Helvetica, sans-serif;
+    background-color: #f0ddba;
+}
+
+.page-header h1 {
+    font-size: 5em;
+    color: rgb(32, 32, 90);
+    font-family: "Mea Culpa", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.page-header h3 {
+    margin-top: 0;
+    text-align: end;
+    color: rgb(45, 45, 48);
 }
 
 .top-text {
@@ -58,11 +80,11 @@ body {
     border-color: rgb(151, 151, 151);
     border-width: 5px;
     height: 3em;
-    padding: 15px;
+    padding: 0 15px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-family: "Silkscreen", Helvetica, sans-serif;
+    font-family: "Digital Font","Silkscreen", Helvetica, sans-serif;
     font-size: 3em;
 }
 
